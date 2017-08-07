@@ -1,7 +1,7 @@
 var Alphabet = function() {
     var data = [0,0,0,0,0,0,0,0];
 
-    var setLetter = function(letter) {
+    var __setLetter = function(letter) {
         switch(letter) {
             case "A":
                 data = [0,0B011100,0B100010,0B111110,0B100010,0B100010,0,0]
@@ -94,7 +94,7 @@ var Alphabet = function() {
         return data;
     };
 
-    var setLetterR = function(letter) {
+    var __setLetterR = function(letter) {
         switch(letter) {
             case "A":
                 data = [0,0,0B111100,0B001010,0B001010,0B001010,0B111100,0]
@@ -187,7 +187,7 @@ var Alphabet = function() {
         return data;
     };
 
-    var setNumber = function(number) {
+    var __setNumber = function(number) {
         switch(number) {
             case 0:
                 data = [0,0B011100,0B100110,0B101010,0B110010,0B011100,0,0]
@@ -223,7 +223,7 @@ var Alphabet = function() {
         return data;
     };
 
-    var setDiceNumber = function(number) {
+    var __setDiceNumber = function(number) {
         switch(number) {
             case 1:
                 data = [0,0B00000000,0B00000000,0B00011000,0B00011000,0B00000000,0B00000000,0]
@@ -246,4 +246,14 @@ var Alphabet = function() {
         }
         return data;
     };
+
+    return {
+        'setLetter': __setLetter,
+        'setLetterR': __setLetterR,
+        'setNumber': __setNumber,
+        'setDiceNumber': __setDiceNumber,
+    }
 };
+
+module.exports = Alphabet();
+return module.exports;
